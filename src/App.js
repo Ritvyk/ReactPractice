@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import NavBar from "./subcomponents/NavBar";
 import Content from "./subcomponents/Content";
+import Footer from "./subcomponents/footer";
 
 function App() {
-  const [error, setError] = useState(false);
   const [todos, setTodos] = useState([
     {
-      work: "Homework",
+      work: "Math",
       completed: false,
       id: 143,
     },
     {
-      work: "Homework Science",
+      work: "Science",
       completed: false,
       id: 2123,
     },
     {
-      work: "Homework SS",
+      work: "Social studies",
       completed: false,
       id: 133,
     },
     {
-      work: "Homework Hindi",
+      work: "Hindi",
       completed: false,
       id: 43123,
     },
     {
-      work: "Homework English",
+      work: "English",
       completed: false,
       id: 5182,
     },
@@ -41,23 +41,12 @@ function App() {
   //   console.log("Ill will render only  one time");
   // }, []);
 
-  const handleError = (e) => {
-    setError(true);
-  };
-
-  useEffect(() => {
-    if (error === false) {
-      return;
-    }
-    alert("Error!!!!!");
-  }, [error]);
-
   return (
     <div className="App">
-      <button onClick={handleError}>ShowError</button>
       <NavBar />
 
       <Content todos={todos} setTodos={setTodos} />
+      <Footer todos={todos} />
     </div>
   );
 }

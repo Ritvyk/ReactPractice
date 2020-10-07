@@ -19,7 +19,7 @@ export default function Content(props) {
       {props.todos.map((todo, index) => {
         return (
           <div key={index}>
-            <span>{index + 1}</span>{" "}
+            {/* <span>{index + 1}</span>{" "} */}
             <Todo todo={todo} handleComplete={handleComplete} />
           </div>
         );
